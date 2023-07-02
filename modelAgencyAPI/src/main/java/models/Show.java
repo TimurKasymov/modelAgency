@@ -12,9 +12,9 @@ public class Show extends BaseModelWithName {
     private Date showDate;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Model winner;
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "show", cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "shows", cascade = CascadeType.ALL)
     private List<Sponsor> sponsors;
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "show", cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "shows", cascade = CascadeType.ALL)
     private List<Staff> staff;
     @ElementCollection
     private List<ClothesWornByModelOnShow> clothesWornByModelOnShow;

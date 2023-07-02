@@ -3,6 +3,7 @@ package models;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Model extends BaseModelWithName {
     @CreationTimestamp
     private Date inCompanySince;
     @Basic(optional = false)
-    private Date birthDate;
+    private LocalDate birthDate;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(joinColumns = @JoinColumn(name = "model_id"),
             inverseJoinColumns = @JoinColumn(name = "show_id"))
@@ -23,7 +24,7 @@ public class Model extends BaseModelWithName {
     public Model(){
     }
 
-    public Model(String name, String sureName, Date birthDate, List<Show> shows, Sex sex) {
+    public Model(String name, String sureName, LocalDate birthDate, List<Show> shows, Sex sex) {
         super(name);
         this.sureName = sureName;
         this.birthDate = birthDate;
@@ -47,11 +48,11 @@ public class Model extends BaseModelWithName {
         this.inCompanySince = inCompanySince;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

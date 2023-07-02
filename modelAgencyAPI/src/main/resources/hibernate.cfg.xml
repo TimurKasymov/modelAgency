@@ -26,8 +26,19 @@
             kasymov2002
         </property>
 
-        <!-- List of XML mapping files -->
-        <mapping resource = "Employee.hbm.xml"/>
+        <!-- This property enables us to update the
+               table everytime the program runs-->
+        <property name="hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+
+        <mapping class="models.Clothes"/>
+        <mapping class="models.Staff"/>
+        <mapping class="models.BaseModel"/>
+        <mapping class="models.BaseModelWithName"/>
+        <mapping class="models.Model"/>
+        <mapping class="models.Position"/>
+        <mapping class="models.Show"/>
+        <mapping class="models.Sponsor"/>
 
     </session-factory>
 </hibernate-configuration>

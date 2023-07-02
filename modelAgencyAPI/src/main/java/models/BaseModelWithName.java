@@ -1,9 +1,7 @@
 package models;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.MappedSuperclass;
 
-@Entity
 @MappedSuperclass
 public class BaseModelWithName extends BaseModel{
     private String name;
