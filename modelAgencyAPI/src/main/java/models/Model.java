@@ -1,20 +1,29 @@
 package models;
 
-import java.util.Date;
+import jakarta.persistence.*;
 
+import java.util.Date;
+import java.util.List;
+@Entity
 public class Model extends BaseModelWithName {
     private String sureName;
     private Date inCompanySince;
     private Date birthDate;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(joinColumns = @JoinColumn(name = "model_id"),
+            inverseJoinColumns = @JoinColumn(name = "show_id"))
+    private List<Show> shows;
+    @Basic(optional = false, fetch = FetchType.LAZY)
     private Sex sex;
     public Model(){
     }
 
-    public Model(String name, String sureName, Date inCompanySince, Date birthDate, Sex sex) {
+    public Model(String name, String sureName, Date inCompanySince, Date birthDate, List<Show> shows, Sex sex) {
         super(name);
         this.sureName = sureName;
         this.inCompanySince = inCompanySince;
         this.birthDate = birthDate;
+        this.shows = shows;
         this.sex = sex;
     }
 
@@ -48,5 +57,13 @@ public class Model extends BaseModelWithName {
 
     public void setSex(Sex sex) {
         this.sex = sex;
+    }
+
+    public List<Show> getShows() {
+        return shows;
+    }
+
+    public void setShows(List<Show> shows) {
+        this.shows = shows;
     }
 }

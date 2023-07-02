@@ -1,15 +1,24 @@
 package models;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.Basic;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 
+import java.time.LocalDateTime;
+@Entity
 public class Clothes extends BaseModelWithName {
     private LocalDateTime supplyDate;
+    @Basic(optional = false, fetch = FetchType.LAZY)
     private Sex clothesSex;
 
     public Clothes(String name, LocalDateTime supplyDate, Sex clothesSex) {
         super(name);
         this.supplyDate = supplyDate;
         this.clothesSex = clothesSex;
+    }
+
+    public Clothes() {
+
     }
 
     public LocalDateTime getSupplyDate() {

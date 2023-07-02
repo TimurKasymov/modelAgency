@@ -1,5 +1,6 @@
 package models;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -7,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+@Entity
 public class BaseModel {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
@@ -28,5 +30,9 @@ public class BaseModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public LocalDateTime getCreatingTime() {
+        return creatingTime;
     }
 }

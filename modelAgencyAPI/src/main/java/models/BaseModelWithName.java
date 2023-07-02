@@ -1,5 +1,8 @@
 package models;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class BaseModelWithName extends BaseModel{
     private String name;
 
