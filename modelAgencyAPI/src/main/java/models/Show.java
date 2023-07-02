@@ -2,13 +2,14 @@ package models;
 
 import java.util.Date;
 
-public class Show {
+public class Show extends BaseModelWithName {
     private String location;
     private int winningPrize;
     private Date showDate;
     private Model winner;
 
-    public Show(String location, int winningPrize, Date showDate, Model winner) {
+    public Show(String name, String location, int winningPrize, Date showDate, Model winner) {
+        super(name);
         this.location = location;
         this.winningPrize = winningPrize;
         this.showDate = showDate;

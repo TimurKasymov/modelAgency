@@ -2,18 +2,15 @@ package models;
 
 import java.util.Date;
 
-public class Model extends BaseModelWithName {
+public class Staff extends BaseModelWithName {
+
     private String sureName;
-    private Date inCompanySince;
     private Date birthDate;
     private Sex sex;
-    public Model(){
-    }
 
-    public Model(String name, String sureName, Date inCompanySince, Date birthDate, Sex sex) {
+    public Staff(String name, String sureName, Date birthDate, Sex sex) {
         super(name);
         this.sureName = sureName;
-        this.inCompanySince = inCompanySince;
         this.birthDate = birthDate;
         this.sex = sex;
     }
@@ -26,20 +23,12 @@ public class Model extends BaseModelWithName {
         this.sureName = sureName;
     }
 
-    public Date getInCompanySince() {
-        return inCompanySince;
-    }
-
-    public void setInCompanySince(Date inCompanySince) {
-        this.inCompanySince = inCompanySince;
-    }
-
     public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDate(Date date) {
+        birthDate = date;
     }
 
     public Sex getSex() {

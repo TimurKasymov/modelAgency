@@ -1,23 +1,14 @@
 package models;
 
-public class Sponsor {
-    private String name;
+public class Sponsor extends BaseModelWithName {
     private String address;
     private String contact;
 
 
     public Sponsor(String name, String address, String contact) {
-        this.name = name;
+        super(name);
         this.address = address;
         this.contact = contact;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getAddress() {

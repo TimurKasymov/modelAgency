@@ -1,12 +1,12 @@
 package models;
 
-public class BaseModelWIthName extends BaseModel{
+public class BaseModelWithName extends BaseModel{
     private String name;
 
-    public BaseModelWIthName() {
+    public BaseModelWithName() {
     }
 
-    public BaseModelWIthName(String name) {
+    public BaseModelWithName(String name) {
         this.name = name;
     }
 
