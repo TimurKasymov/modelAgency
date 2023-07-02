@@ -1,10 +1,14 @@
 package models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.OneToOne;
 
 @Embeddable
 public class ClothesWornByModelOnShow {
+    @OneToOne(cascade = CascadeType.ALL)
     private Model model;
+    @OneToOne(cascade = CascadeType.ALL)
     private Clothes clothes;
 
     public ClothesWornByModelOnShow(Model model, Clothes clothes) {

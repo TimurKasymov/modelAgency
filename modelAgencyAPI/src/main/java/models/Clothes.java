@@ -7,6 +7,7 @@ import jakarta.persistence.FetchType;
 import java.time.LocalDateTime;
 @Entity
 public class Clothes extends BaseModelWithName {
+
     private LocalDateTime supplyDate;
     @Basic(optional = false, fetch = FetchType.LAZY)
     private Sex clothesSex;

@@ -1,13 +1,18 @@
 package models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
 import java.util.List;
+
 @Entity
 public class Model extends BaseModelWithName {
+    @Basic(optional = false)
     private String sureName;
+    @CreationTimestamp
     private Date inCompanySince;
+    @Basic(optional = false)
     private Date birthDate;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(joinColumns = @JoinColumn(name = "model_id"),
@@ -18,10 +23,9 @@ public class Model extends BaseModelWithName {
     public Model(){
     }
 
-    public Model(String name, String sureName, Date inCompanySince, Date birthDate, List<Show> shows, Sex sex) {
+    public Model(String name, String sureName, Date birthDate, List<Show> shows, Sex sex) {
         super(name);
         this.sureName = sureName;
-        this.inCompanySince = inCompanySince;
         this.birthDate = birthDate;
         this.shows = shows;
         this.sex = sex;
